@@ -4,28 +4,33 @@ import type { StorybookConfig } from '@storybook/react/types'
 
 const config: StorybookConfig = {
   // Specifies the Storybook framework (React in this case)
-  framework: '@storybook/react',
+  framework: {
+    name: '@storybook/react-vite',
+    options: {}
+  },
 
   // Addons you want to use for additional functionality
-  addons: [
-    '@storybook/addon-links', // Link between stories
-    '@storybook/addon-essentials', // Basic set of addons (Docs, Controls, Actions, etc.)
-    '@storybook/addon-interactions', // Interactions for testing
-    '@storybook/addon-a11y', // Accessibility testing
-    '@storybook/addon-storysource', // Shows the source code for your stories
-  ],
+  addons: [// Link between stories
+  '@storybook/addon-links', // Basic set of addons (Docs, Controls, Actions, etc.)
+  '@storybook/addon-essentials', // Interactions for testing
+  '@storybook/addon-interactions', // Accessibility testing
+  '@storybook/addon-a11y', // Shows the source code for your stories
+  '@storybook/addon-storysource', '@chromatic-com/storybook'],
 
   // Specifies where to find the stories
-  stories: [
-    // Look for stories in the 'src' folder (adjust the path if necessary)
-    '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-  ],
+  stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
 
   // Webpack or other configuration customizations
   webpackFinal: async (config) => {
     // Optionally modify Webpack configuration if needed
     return config
   },
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
+  }
 }
 
 export default config

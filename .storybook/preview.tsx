@@ -2,7 +2,7 @@
 import React from 'react'
 import { MemoryRouter, Route, Routes } from 'react-router'
 import type { Preview } from '@storybook/react'
-import Providers from '.src/providers'
+import Providers from '../src/providers'
 
 // import { withA11y } from '@storybook/addon-a11y' // Accessibility addon
 // import { withTests } from '@storybook/addon-jest' // Jest test results addon
@@ -53,6 +53,8 @@ const preview: Preview = {
       element: '#root', // Where the accessibility checks should happen
     },
   },
+
+  tags: ['autodocs'],
 }
 
 export default preview
