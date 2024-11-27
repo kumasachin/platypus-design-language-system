@@ -18,6 +18,7 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y', // Shows the source code for your stories
     '@storybook/addon-storysource',
     '@chromatic-com/storybook',
+    '@storybook/addon-docs',
   ],
 
   // Specifies where to find the stories
@@ -32,7 +33,7 @@ const config: StorybookConfig = {
   docs: {},
 
   typescript: {
-    reactDocgen: 'react-docgen-typescript',
+    reactDocgen: 'react-docgen', // Specify the correct docgen library
   },
 }
 
