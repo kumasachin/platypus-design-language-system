@@ -1,21 +1,24 @@
 // .storybook/main.ts
 
-import type { StorybookConfig } from '@storybook/react/types'
+import { StorybookConfig } from '@storybook/types'
 
 const config: StorybookConfig = {
   // Specifies the Storybook framework (React in this case)
   framework: {
     name: '@storybook/react-vite',
-    options: {}
+    options: {},
   },
 
   // Addons you want to use for additional functionality
-  addons: [// Link between stories
-  '@storybook/addon-links', // Basic set of addons (Docs, Controls, Actions, etc.)
-  '@storybook/addon-essentials', // Interactions for testing
-  '@storybook/addon-interactions', // Accessibility testing
-  '@storybook/addon-a11y', // Shows the source code for your stories
-  '@storybook/addon-storysource', '@chromatic-com/storybook'],
+  addons: [
+    // Link between stories
+    '@storybook/addon-links', // Basic set of addons (Docs, Controls, Actions, etc.)
+    '@storybook/addon-essentials', // Interactions for testing
+    '@storybook/addon-interactions', // Accessibility testing
+    '@storybook/addon-a11y', // Shows the source code for your stories
+    '@storybook/addon-storysource',
+    '@chromatic-com/storybook',
+  ],
 
   // Specifies where to find the stories
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
@@ -29,8 +32,8 @@ const config: StorybookConfig = {
   docs: {},
 
   typescript: {
-    reactDocgen: 'react-docgen-typescript'
-  }
+    reactDocgen: 'react-docgen-typescript',
+  },
 }
 
 export default config
