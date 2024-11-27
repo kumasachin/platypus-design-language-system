@@ -25,6 +25,17 @@
       }
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn tsc"
+    }
+  },
+  "lint-staged": {
+    "•.{js,jsx,ts,tsx}":[
+      "eslint --no-ignore --fix --max-warnings -0"
+    ]
+  },
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
