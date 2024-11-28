@@ -3,7 +3,7 @@ import { CircularProgress, CircularProgressProps } from '@mui/material'
 import { Meta, StoryFn as Story } from '@storybook/react'
 
 export default {
-  title: 'Components/Loader', // Storybook category
+  title: 'atoms/Loader', // Storybook category
   component: CircularProgress, // Component to document
   argTypes: {
     color: {
